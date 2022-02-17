@@ -1,14 +1,16 @@
 import NavBar from "./components/Navbar";
-
+import Pay from "./components/Pay";
+import Days from "./components/Days";
 function App() {
   return (
-  //   <h4 className="text-emerald-400 font-mono underline">
-  //   Hello world!
-  // </h4>
-
+  
   <div className='app'>
     <NavBar/>
-  </div>
+    <main className='bg-gray-100'> 
+        <Pay/> 
+        <Days/>
+    </main>
+    </div>
   );
 }
 
