@@ -1,5 +1,4 @@
-import {HiShoppingCart} from 'react-icons/hi';
-import {AiOutlineHeart} from 'react-icons/ai';
+
 import logod from '../assets/logo.png'
 
 function NavBar() {
