@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const meterSchema = new mongoose.Schema({
-  _id: Schema.Types.ObjectId,
+  _id: mongoose.Schema.Types.ObjectId,
   owner_name: {
     type: String,
     required: true,

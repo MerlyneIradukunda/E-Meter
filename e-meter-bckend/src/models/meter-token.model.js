@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const meterTokenSchema = new mongoose.Schema({
   meter_number: {
-    type: Schema.Types.ObjectId, ref: 'Meter',
+    type: mongoose.Schema.Types.ObjectId, ref: 'Meter',
     required: true
   },
   amount:Number,

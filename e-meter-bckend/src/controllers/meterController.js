@@ -2,7 +2,7 @@
 const {  Meter  } = require("../models/meter.model");
 
 //create meter
-exports.create = (req, res) => {
+const create = async(req, res) => {
   
   const data = await Meter.save(req.body)
     if(!data){
@@ -10,12 +10,14 @@ exports.create = (req, res) => {
     }
     res.status(201).send(data);
   };
+
 //get by meter by id 
-exports.findOne = (req, res) => {
+const findOne = (req, res) => {
 
     const meter_number = req.params.meter_number;
 
-    const data= await  Meter.findOne({ meter_meter_number: meter_number })
+    const data= Meter.findOne({ meter_meter_number: meter_number })
+
     if(!data){
         res.status(404).send({
             message: "Meter Not found  " + meter_number,
@@ -25,9 +27,9 @@ exports.findOne = (req, res) => {
     
   };
 //get all meters
-exports.find = (req, res) => {
+const find = (req, res) => {
  
-    const data= await  Meter.find();
+    const data=  Meter.find();
 
     if(!data){
         res.status(404).send({
@@ -38,3 +40,8 @@ exports.find = (req, res) => {
     
   };
 
+module.exports={
+  find,
+  findOne,
+  create
+}
