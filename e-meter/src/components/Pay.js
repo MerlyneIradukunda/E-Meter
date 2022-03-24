@@ -30,7 +30,7 @@ export default function Pay() {
                 {/* <ul>
                     <li><Link to="/Days">View Your Days  </Link></li>
                 </ul> */}
-                <a  href="#" className="text-sm text-red-500 hover:underline ">View Your Days</a>
+                <Link to="/days" className="text-sm text-red-500 hover:underline ">View Your Days</Link>
         </form>
         </div>
         <div></div>
