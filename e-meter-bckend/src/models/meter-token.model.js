@@ -5,10 +5,12 @@ const meterTokenSchema = new mongoose.Schema({
     type: Schema.Types.ObjectId, ref: 'Meter',
     required: true
   },
+  amount:Number,
+  
   tokens:[{
     type:Number
    }]
 });
 
 
-module.exports.Meter = mongoose.model("MeterToken", meterTokenSchema);
+module.exports.MeterToken = mongoose.model("MeterToken", meterTokenSchema);
