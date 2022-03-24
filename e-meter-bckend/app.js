@@ -2,6 +2,9 @@ const express = require("express");
 require('dotenv').config()
 const mongoose= require("mongoose");
 
+const meterRoutes = require('../e-meter-bckend/src/routes/meter.router');
+const meterTokenRoutes = require('../e-meter-bckend/src/routes/meter-token.route')
+
 // mongoose
 //   .connect(uri)
 //   .then(() =>
@@ -26,6 +29,8 @@ app.get('/api/home/', (req, res) => {
   res.send( 'Hello World!' );
 });
 
+app.use('/meter',meterRoutes);
+app.use('/token',meterTokenRoutes);
 
 let port = 8080;
 app.listen(port, () => {

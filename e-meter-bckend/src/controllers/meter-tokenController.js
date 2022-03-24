@@ -1,5 +1,5 @@
 
-const {  Meter  } = require("../models/meter-token.model");
+const {  MeterToken  } = require("../models/meter-token.model");
 
 // create token 
 exports.createToken = async (req, res) => {
@@ -14,12 +14,11 @@ exports.createToken = async (req, res) => {
         message: "Meter Not Found"
       });
   
-    // Save Token in the database
-    Token.create({
+    
+    MeterToken.create({
       code: uuidv4(), // new uuid
       meter_number: req.body.meter_number,
-      total_amount: req.body.total_amount,
-      status: "unused",
+      amount: req.body.amount
     })
       .then((data) => {
         res.status(201).send(data);
